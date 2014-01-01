@@ -16,7 +16,7 @@ class CategoryService {
     public function setTicketCategory(TicketInterface $ticket, $category)
     {
         // Validate Category Exists (throw InvalidArgumentException)
-        if( ! $this->ticketRepository->categoryExists() ) {
+        if( ! $this->ticketRepository->categoryExists($category) ) {
             throw new InvalidArgumentException('Category '.$category.' does not exist.');
         }
 
